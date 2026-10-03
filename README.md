@@ -37,6 +37,7 @@ Alright buddy. I hear you. It requires Ubuntu 24.04 or later (or another Debian-
 libadwaita 1.4+).
 
 ```sh
+git clone https://github.com/CatPrinceHQ2/Linux-Chess.git && cd Linux-Chess
 sudo apt install ./linux-chess_0.1.1_amd64.deb
 sudo apt install stockfish        # recommended: a ready-to-use bot
 ```
@@ -46,8 +47,11 @@ Then just select and open **Prince's Linux-Chess** from your app menu! Or if you
 ## Build from source
 
 ```sh
-sudo apt install libgtk-4-dev libadwaita-1-dev pkg-config
-cargo build --release             # needs Rust 1.85 or newer (use rustup)
+git clone https://github.com/CatPrinceHQ2/Linux-Chess.git && cd Linux-Chess
+sudo apt install build-essential pkg-config libgtk-4-dev libadwaita-1-dev curl
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+. "$HOME/.cargo/env"
+cargo build --release
 ./target/release/linux-chess
 ```
 
