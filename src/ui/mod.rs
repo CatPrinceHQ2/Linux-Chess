@@ -304,9 +304,12 @@ fn layout(app: &Rc<App>, application: &adw::Application) {
     fen_bar.set_margin_bottom(6);
     fen_bar.append(&gtk::Label::new(Some("FEN")));
     fen_bar.append(&app.fen_entry);
-    for (label, action) in [("Load FEN", "win.load-fen"), ("Copy FEN", "win.copy-fen"), ("Start position", "win.start"), ("Clear", "win.clear")] {
+    for (label, action) in [("Load FEN", "win.load-fen"), ("Copy FEN", "win.copy-fen"), ("Start position", "win.start"), ("Flip board", "win.flip"), ("Clear", "win.clear")] {
         let b = gtk::Button::with_label(label);
         b.set_action_name(Some(action));
+        if action == "win.flip" {
+            b.set_tooltip_text(Some("Flip the board to play as Black (Ctrl+F)"));
+        }
         fen_bar.append(&b);
     }
 
