@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Prince's Linux-Chess
+Comment=Play chess against a bot locally on your Linux machine
+Exec=linux-chess
+Icon=io.github.catprincehq.linux_chess
+Terminal=false
+Categories=Game;BoardGame;
+Keywords=chess;bot;engine;stockfish;offline;
+StartupWMClass=io.github.catprincehq.linux_chess

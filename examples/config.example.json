@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "selected_engine": "stockfish",
+  "search_mode": "time",
+  "search_time_ms": 5000,
+  "search_depth": 20,
+  "search_nodes": 5000000,
+  "multipv": 1,
+  "engines": [
+    {
+      "id": "stockfish",
+      "name": "Stockfish",
+      "path": "/usr/games/stockfish",
+      "protocol": "uci",
+      "enabled": true,
+      "option_values": { "Threads": "8", "Hash": "2048" }
+    },
+    {
+      "id": "my-engine",
+      "name": "My Engine",
+      "path": "/home/YOU/Engines/my-engine",
+      "args": [],
+      "protocol": "uci",
+      "enabled": true,
+      "description": "Any UCI engine: option_values keys are whatever the engine itself declares.",
+      "option_values": { "Style": "Aggressive" }
+    }
+  ]
+}
