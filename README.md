@@ -38,7 +38,7 @@ libadwaita 1.4+).
 
 ```sh
 git clone https://github.com/CatPrinceHQ2/Linux-Chess.git && cd Linux-Chess
-sudo apt install ./linux-chess_0.1.2_amd64.deb
+sudo apt install ./linux-chess_0.1.21_amd64.deb
 sudo apt install stockfish        # recommended: a ready-to-use bot
 ```
 

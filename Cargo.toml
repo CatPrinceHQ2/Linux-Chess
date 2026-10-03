@@ -1,6 +1,6 @@
 [package]
 name = "linux-chess"
-version = "0.1.2"
+version = "0.1.21"
 edition = "2021"
 description = "Play chess against a bot locally on your Linux machine, with performance in mind"
 authors = ["CatPrinceHQ"]

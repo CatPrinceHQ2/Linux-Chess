@@ -468,6 +468,7 @@ fn draw_board(cr: &gtk::cairo::Context, w: f64, h: f64, s: &BoardState) {
             cr.move_to(x + size * 0.06, y + size * 0.2);
             let _ = cr.show_text(&(rank_of(sq) + 1).to_string());
         }
+        cr.new_path();
     }
 
     // Legal-move hints.
@@ -555,6 +556,9 @@ pub fn draw_piece(cr: &gtk::cairo::Context, piece: Piece, cx: f64, cy: f64, size
     layout.set_text(&text);
     let (_, ink_logical) = layout.pixel_extents();
     cr.save().ok();
+    // pango draws the layout at the cairo *current point*; clear any leftover one (e.g. from the
+    // coordinate labels) so the glyph is placed relative to the translation below only.
+    cr.new_path();
     cr.translate(cx - ink_logical.width() as f64 / 2.0, cy - ink_logical.height() as f64 / 2.0);
     pangocairo::functions::layout_path(cr, &layout);
     let (fill, stroke) = match piece.color {
